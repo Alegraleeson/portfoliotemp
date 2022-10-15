@@ -15,14 +15,20 @@ links.forEach((link, i) => {
             links[activeLink].classList.remove('active');
             link.classList.add('active');
             sections[activeLink].classList.remove('active');
+            // sections[activeLink].style.display = 'none';
+            
 
             setTimeout(() => {
                 activeLink = i;
                 sections[i].classList.add('active');
+                // sections[i].style.display = 'block';
+
             }, 1000);
         }
     })
 })
+
+
 
 
 
