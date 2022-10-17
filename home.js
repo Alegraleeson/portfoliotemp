@@ -1,43 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alegra Leeson</title>
-    <link rel="stylesheet" href="./reset.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+const links = document.querySelectorAll('.link');
+const sections = document.querySelectorAll('section');
 
-    <!-- navbar -->
-<nav class="navbar header">
-    <div class="dropdown">
-        <li id="homeLink" class="link active dropBtn"><a href="#">Alegra Leeson</a></li>
-    <ul class="link-group dropdown-content">
+const homeSection = document.getElementById("home-section");
+const projectSection = document.getElementById("projects-section");
+const aboutSection = document.getElementById("about-section");
+const contactSection = document.getElementById("contact-section");
+
+const home = document.getElementById("home-link");
+const projects = document.getElementById("projects-link");
+const about = document.getElementById("about-link");
+const contact = document.getElementById("contact-link");
+
+const header = document.getElementById("header");
+const content = document.getElementById("content-container");
+
+const soon = document.getElementById('coming-soon');
+
+const nav = document.getElementById("nav");
+const footer = document.getElementById("footer");
+const upArrow = document.getElementById("upArrow");
+const downArrow = document.getElementById("downArrow");
+const email = document.getElementById("contactAbout");
+
+
+
+
+console.log("connected successfully!")
+
+
+
+    function removeActive () {
+        homeSection.style.opacity = 0;
+        projectSection.style.opacity = 0;
+        aboutSection.style.opacity = 0;
+        contactSection.style.opacity = 0;
+    }
+
+    function opacityZero () {
+        sections.forEach( elem => {
+            elem.style.opacity = 0;
+
+        })
         
-        <li class="link"><a href="#">projects</a></li>
-        <li class="link"><a href="#">about</a></li>
-        <li class="link"><a href="#">contact</a></li>
-    </ul>
+    }
 
-    </div>
+    function addActive (section)  {
+        section.style.opacity = 1;
+        
+            }
 
+
+
+// const displayNav = () => {
+//     if(nav.classList.contains("show")){
+//         nav.style.display = "block";
+//         downArrow.setAttribute("hidden", "hidden");
+//         nav.classList.remove("show");
+//     } else {
+//         nav.style.display = "none";
+//         downArrow.removeAttribute("hidden")
+//         nav.classList.toggle("show");
+
+//     }
     
-</nav>
+// }
 
-<!-- home section -->
+// const displayFooter = () => {
+//     if(footer.classList.contains("show")){
+//         footer.style.display = "block";
+//         upArrow.setAttribute("hidden", "hidden");
+//         footer.classList.remove("show");
+//     } else {
+//         footer.style.display = "none";
+//         upArrow.removeAttribute("hidden")
+//         footer.classList.toggle("show");
 
-<section class="home-section active">
+//     }
+    
+// }
+
+// function showAlert() {
+//     alert ("Coming soon!");
+//   }
+
+// soon.addEventListener('click', showAlert)
+
+// header.addEventListener('dblclick', displayHeader)
+// footer.addEventListener('dblclick', displayFooter)
+// downArrow.addEventListener('click', displayHeader)
+// upArrow.addEventListener('click', displayFooter)
+// email.addEventListener('click', () => email.setAttribute("href=", "mailto:alegraleeson@gmail.com"));
+
+function displayHome (){
+    // removeActive();
+    header.innerHTML = ''
+    content.innerHTML = ''
+
+    content.innerHTML = `
+    <section id="home-section" class="home-section">
     <img id = "profilePic" src="img/1516882473755.jpg" class="home-img" alt="">
     <h1 class="hero-heading">Alegra Leeson<br> Software Engineer</h1>
+    </section>
+    `
     
-</section>
+    // addActive(home);
+    // addActive(homeSection);
+    
+}
 
-<!-- project section -->
-<section class="project-section">
-    <h1 class="project-heading">some of my projects</h1>
+function displayProjects (){
+    header.innerHTML = ''
+    content.innerHTML = ''
+    
+    header.innerHTML = 'some of my projects'
+    content.innerHTML = `
+    <section id="project-section" class="project-section">
     <div class="project-container">
         <div class="project-card">
             <img src="img/Dinner-Picker-Screenshot.png" class="project-img" alt="">
@@ -66,10 +143,19 @@
             </div>
     </div>
 </section>
+    `
+    // removeActive();
+    // addActive(projects);
+    // addActive(projectSection);
+}
 
-<!-- about section -->
-<section class="about-section">
-    <h1 class="heading about-heading">a bit about me</h1>
+function displayAbout (){
+    header.innerHTML = ''
+    content.innerHTML = ''
+
+    header.innerHTML = 'a bit about me'
+    content.innerHTML = `
+    <section id="about-section" class="about-section">
     <div class="about">
         
         <div class="about-img-container">
@@ -89,7 +175,7 @@
     </div>
 
     <!-- skills -->
-<div class="skill-section">
+<div id="skill-section" class="skill-section">
     <h1 class="heading">some of my skills</h1>
     <div class="skills-container">
         <!-- <div class="skill-card">
@@ -113,7 +199,7 @@
     </div>
 </div>
 
-<!-- timeline -->
+<!-- timeline
 <div class="timeline">
     <h1 class="heading">education and experience</h1>
     <div class="card">
@@ -123,53 +209,62 @@
             </p>
         </div>
     </div>
-    //+4 more cards
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">2008 - Sep 2022</h1>
+            <p class="card-detail">Designer  											
+            Ivy Frozen Productions
+            IvyFrozen.com - designed and built multiple iterations with HTML & CSS  
+            Built an ecommerce and portfolio website to show off clothing designs to interested and diverse minded clients
+            Operated various machines and equipment necessary to implement business growth such as pr1000e, babylock serenade 
+            Worked with customers to create custom designs and resolve any issues
+            
+            </p>
+        </div>
+    </div>
 </div>
 
-</section>
+</section> -->
+    `
+    // removeActive();
+    // addActive(about);
+    // addActive(aboutSection);
+}
 
+function displayContact (){
+    header.innerHTML = ''
+    content.innerHTML = ''
 
-<!-- contact section -->
-<section class="contact-section">
+    header.innerHTML = "let's connect!"
+    content.innerHTML = `
+    <section id="contact-section" class="contact-section">
     
-    <section class="contact-links">
-        <h1 class="heading contact-heading">let's connect</h1>
+        <section class="contact-links">
+        
         <a class ="contact-btn" href="mailto:alegraleeson@gmail.com" target="_blank" rel="noreferrer noopener">E-Mail</a>
         <a id="resume" class="contact-btn" href="img/Alegra Leeson Resume (7).pdf" target="_blank" rel="noreferrer noopener">Resume</a>
         <a class="contact-btn" href="https://www.linkedin.com/in/alegraleeson" target="_blank" rel="noreferrer noopener">LinkedIn</a>
         <a class="contact-btn" href="https://github.com/Alegraleeson" target="_blank" rel="noreferrer noopener">Github</a>
-            
-        
-    </section>
-   
-    <!-- <form class="contact-form">
-        <input type="text" name="name" id="name" autocomplete="off" placeholder="name">
-        <input type="text" name="email" id="email" autocomplete="off" placeholder="email">
-        <textarea name="msg" id="msg" placeholder="message" autocomplete="off"></textarea>
-        <button type="submit" class="form-submit-btn">contact</button>
-    </form> -->
-    <!-- map -->
-    <div class="map">
+                   
+        </section>
+
+        <div class="map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90325.47666054723!2d-93.33151843815324!3d44.970675595318745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b333909377bbbd%3A0x939fc9842f7aee07!2sMinneapolis%2C%20MN!5e0!3m2!1sen!2sus!4v1665505944698!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </section>
+    `
+    // removeActive();
+    // addActive(home);
+    // addActive(aboutSection);
+}
 
+home.addEventListener('click', displayHome)
+projects.addEventListener('click', displayProjects)
+about.addEventListener('click', displayAbout)
+contact.addEventListener('click', displayContact)
 
-<div id="upArrow" hidden="hidden" class="container">
-    <div class="bar1"></div>
-    <div class="bar2"></div>
-    <div class="bar3"></div>
-  </div>
-        <div id="footer" hidden="" class="footer show">
-            <div class="footer">
-                <a class="footItem" href="#home" target="_blank" rel="noreferrer noopener"> Created by Alegra Leeson © 2022</a>
-                <a class="footItem" href="https://www.linkedin.com/in/alegraleeson" target="_blank" rel="noreferrer noopener">LinkedIn</a>
-                <a class="footItem" href="https://github.com/Alegraleeson" target="_blank" rel="noreferrer noopener">GitHub</a>
-                <a class="footItem" href="mailto:alegraleeson@gmail.com" target="_blank" rel="noreferrer noopener">E-Mail</a>
-                <a class="footItem" href="img/Alegra Leeson Resume (7).pdf" target="_blank" rel="noreferrer noopener">Resume</a>
+function myFunction(x) {
+    x.classList.toggle("change");
+  }
 
-            </div>
-
-<script src="app.js"></script>
-</body>
-</html>
+displayHome();

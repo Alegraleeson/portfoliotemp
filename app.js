@@ -1,6 +1,8 @@
 const links = document.querySelectorAll('.link');
 const sections = document.querySelectorAll('section');
 
+const soon = document.getElementById('coming-soon');
+
 const header = document.getElementById("header");
 const footer = document.getElementById("footer");
 const upArrow = document.getElementById("upArrow");
@@ -60,7 +62,11 @@ const displayFooter = () => {
     
 }
 
+function showAlert() {
+    alert ("Coming soon!");
+  }
 
+soon.addEventListener('click', showAlert)
 
 header.addEventListener('dblclick', displayHeader)
 footer.addEventListener('dblclick', displayFooter)
