@@ -12,20 +12,25 @@
 <body>
         <!-- navbar -->
 <nav class="navbar">
-    <img id="logo" src="img/Alegra Leeson (3)-PhotoRoom.png" alt="Alegra Leeson Software Engineer logo">
-    <div class="dropdown">
-        <div class="dropBtn-container" onclick="myFunction(this)">
-        <div class="bar1 dropBtn"></div>
-        <div class="bar2 dropBtn"></div>
-        <div class="bar3 dropBtn"></div>
-    </div>
-    <ul class="link-group dropdown-content">
-        <li id="home-link" class="link active`"><a href="#">Alegra Leeson</a></li>
-        <li id="projects-link" class="link"><a href="#">projects</a></li>
-        <li id="about-link" class="link"><a href="#">about</a></li>
-        <li id="contact-link" class="link"><a href="#">contact</a></li>
-    </ul>
+    <div class="topnav">
+        <img id="home-link" class="logo link active" src="img/Alegra Leeson (3)-PhotoRoom.png" alt="Alegra Leeson Software Engineer logo">
+        <div class="dropdown">
+            <a href="javascript:void(0);" class="icon dropBtn-container" onclick="dropdown(this)">
+            
+        <!-- <div class="dropBtn-container" onclick="myFunction(this)"> -->
+                <div class="bar1 dropBtn"></div>
+                <div class="bar2 dropBtn"></div>
+                <div class="bar3 dropBtn"></div>
+    <!-- </div> -->
+            </a>
+            <ul id="myLinks" class="link-group dropdown-content">
+                <!-- <li id="home-link" class="link active`"><a href="#">Alegra Leeson</a></li> -->
+                <li id="projects-link" class="link"><a href="#">projects</a></li>
+                <li id="about-link" class="link"><a href="#">about</a></li>
+                <li id="contact-link" class="link"><a href="#">contact</a></li>
+            </ul>
 
+        </div>
     </div>
 </nav>
     <main>

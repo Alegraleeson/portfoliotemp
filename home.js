@@ -239,14 +239,14 @@ function displayContact (){
     content.innerHTML = `
     <section id="contact-section" class="contact-section">
     
-        <section class="contact-links">
+        <div class="contact-links">
         
-        <a class ="contact-btn" href="mailto:alegraleeson@gmail.com" target="_blank" rel="noreferrer noopener">E-Mail</a>
-        <a id="resume" class="contact-btn" href="img/Alegra Leeson Resume (7).pdf" target="_blank" rel="noreferrer noopener">Resume</a>
-        <a class="contact-btn" href="https://www.linkedin.com/in/alegraleeson" target="_blank" rel="noreferrer noopener">LinkedIn</a>
-        <a class="contact-btn" href="https://github.com/Alegraleeson" target="_blank" rel="noreferrer noopener">Github</a>
+        <a class ="contact-btn link" href="mailto:alegraleeson@gmail.com" target="_blank" rel="noreferrer noopener">E-Mail</a>
+        <a id="resume" class="contact-btn link" href="img/Alegra Leeson Resume (7).pdf" target="_blank" rel="noreferrer noopener">Resume</a>
+        <a class="contact-btn link" href="https://www.linkedin.com/in/alegraleeson" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+        <a class="contact-btn link" href="https://github.com/Alegraleeson" target="_blank" rel="noreferrer noopener">Github</a>
                    
-        </section>
+        </div>
 
         <div class="map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90325.47666054723!2d-93.33151843815324!3d44.970675595318745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b333909377bbbd%3A0x939fc9842f7aee07!2sMinneapolis%2C%20MN!5e0!3m2!1sen!2sus!4v1665505944698!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -263,8 +263,17 @@ projects.addEventListener('click', displayProjects)
 about.addEventListener('click', displayAbout)
 contact.addEventListener('click', displayContact)
 
-function myFunction(x) {
-    x.classList.toggle("change");
+
+  function dropdown(x) {
+    var linx = document.getElementById("myLinks");
+    if (linx.style.display === "block") {
+      linx.style.display = "none";
+      x.classList.toggle("change");
+      
+    } else {
+      linx.style.display = "block";
+      x.classList.toggle("change");
+    }
   }
 
 displayHome();
