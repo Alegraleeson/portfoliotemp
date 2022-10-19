@@ -65,6 +65,7 @@ a.icon.dropBtn-container{
 
 .logo {
     max-width: 300px;
+    z-index: 10;
     
     
 }
@@ -78,7 +79,7 @@ a.icon.dropBtn-container{
         display: flex;
         justify-content: flex-end;
         align-items: flex-start;
-        z-index: 9; 
+        z-index: 7; 
         white-space: nowrap;
     }
 
